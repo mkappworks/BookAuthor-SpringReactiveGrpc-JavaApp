@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: consumer-service
+  lifecycle:
+    timeout-per-shutdown-phase: "2m"
+
+server:
+  port: 8081
+  http2:
+    enabled: true
+
+grpc:
+  client:
+    producer-service:
+      address: static://localhost:9000
+      negotiationType: plaintext
